@@ -12,14 +12,23 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Email;
 
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', EmailType::class, [
-                'mapped' => false,
+            ->add('email', EmailType::class, 
+            [
+                'mapped' => True,
+                'constraints' => [
+                    new Email([
+                    'message' => 'Please enter a valid email',
+                    ]),
+                    new NotBlank([
+                    'message' => 'Please enter email address',
+                    ]),]
             ])
             ->add('lastname')
             ->add('agreeTerms', CheckboxType::class, [
