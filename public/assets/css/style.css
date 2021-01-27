@@ -1,0 +1,25 @@
+body {
+    display: inline-block;
+    width: 98%;
+    text-align: center;
+    background-color: #434343;
+    justify-content: center;
+    
+}
+.email {
+    font-size: 20px;
+    margin-right: 15px;
+    padding: 5px;
+}
+.pass {
+    font-size: 20px;
+    margin-right: 15px;
+    padding: 5px;
+}
+.passin {
+    margin-right: 29px;
+}
+.btn {
+    margin-top: 20px;
+    width: 80px;
+}

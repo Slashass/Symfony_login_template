@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"> {% endblock %}
 {% block title %}Register{% endblock %}
 
 {% block body %}
@@ -19,4 +19,7 @@
 
         <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}
+    <br>
+    Already have an account? 
+    <a href="{{path('app_login')}}"> Login </a>
 {% endblock %}
